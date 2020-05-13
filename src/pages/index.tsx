@@ -1,0 +1,5 @@
+export { default as Answer } from './Answer'
+export { default as Home } from './Home'
+export { default as Names } from './Names'
+export { default as Send } from './Send'
+export { default as Results } from './Results'

@@ -1,0 +1,16 @@
+.card-component {
+  &.main-card {
+    min-height: 16em;
+
+    .card-title, .status {
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+    
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}

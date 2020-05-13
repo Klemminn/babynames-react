@@ -1,0 +1,26 @@
+.home-page {
+  .gender-buttons {
+    display: flex;
+    justify-content: center;
+
+    .button-component {
+      line-height: 4em;
+      width: 10em;
+      font-weight: 600;
+
+      &.boy {
+        background-color: var(--blue);
+        border-color: var(--blue);
+      }
+
+      &.girl {
+        background-color: var(--pink);
+        border-color: var(--pink);
+      }
+
+      &:first-child {
+        margin-right: 8em;
+      }
+    }
+  }
+}

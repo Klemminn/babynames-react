@@ -1,0 +1,23 @@
+.names-page {
+  .type-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+
+    button {
+      padding: 1em;
+    }
+  }
+
+  .card {
+
+    .finish {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-size: 1.5em !important;
+      height: 3em;
+    }
+  }
+}

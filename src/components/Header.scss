@@ -1,0 +1,13 @@
+.header-component {
+  background-color: var(--purple);
+  
+  .navbar-brand {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+
+  a, a:hover {
+    color: var(--white);
+    text-decoration: none;
+  }
+}
