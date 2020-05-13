@@ -69,7 +69,7 @@ const Results = () => {
         <Col md={4}>
           <Card
             className='main-card'
-            title={results.bothLiked.length ? 'Nöfn sem báðir aðilar völdu' : 'Því miður var ekkert nafns em báðir aðilar völdu :('}
+            title={results.bothLiked.length ? 'Nöfn sem báðir aðilar völdu' : 'Því miður var ekkert nafn sem báðir aðilar völdu :('}
           >
             {results.bothLiked.map((name) => (
               <div

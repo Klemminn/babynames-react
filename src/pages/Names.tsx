@@ -57,7 +57,7 @@ const Names = ({ history }: NamesProps) => {
     try {
       if (!code) {
         const group = await AnswerService.createNewGroup()
-        history.push(`/names/${isMale}/${group.code}`)
+        history.replace(`/names/${isMale}/${group.code}`)
       } else {
         const data = await NamesService.getNameCount({ code, isSender: 1 })
         setCount(data)
