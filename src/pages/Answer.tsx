@@ -57,16 +57,17 @@ const Answer = ({ history }: AnswerProps) => {
     <div className='answer-page'>
       <h1>Hæhæ</h1>
       <p>Sá sem sendi þér þetta vill að þú takir afstöðu til eftirfarandi nafna.</p>
-      <p>Þegar þú hefur farið í gegnum öll nöfnin, þá sjáið lista yfir nöfn sem ykkur líkaði :)</p>
+      <p>Þegar þú hefur farið í gegnum öll nöfnin, þá sjáið þið lista yfir nöfn sem ykkur líkaði :)</p>
       <Row>
         <Col md={6}>
           <NameCard
             name={names[0] || {}}
             onSelect={(isApproved: boolean) => handleSelect(isApproved)}
             disabled={saving}
+            unanswered={names.length}
           />
         </Col>
-        <Col md={6}>
+        <Col md={6} className='d-none d-md-block'>
           <Card className='main-card'>
             <div className='status'>
               Eftir að svara: {names.length}

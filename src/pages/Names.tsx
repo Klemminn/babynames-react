@@ -125,9 +125,10 @@ const Names = ({ history }: NamesProps) => {
             name={name}
             onSelect={(isApproved: boolean) => handleSelect(isApproved)}
             disabled={loading}
+            continueButton={code}
           />
         </Col>
-        <Col md={6}>
+        <Col md={6} className='d-none d-md-block'>
           <Card className='main-card'>
             <div className='status'>
               Valin nöfn: {count.liked}
