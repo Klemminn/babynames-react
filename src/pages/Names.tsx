@@ -53,6 +53,7 @@ const Names = ({ history }: NamesProps) => {
   const [name, setName]: [Name, Function] = useState(defaultName)
   const [count, setCount]: [Count, Function] = useState(defaultCount)
   const [loading, setLoading]: [boolean, Function] = useState(false)
+  const [saving, setSaving]: [boolean, Function] = useState(false)
   const { isMale, code }: { isMale: string, code: string} = useParams()
 
   useEffect(() => {
@@ -61,6 +62,7 @@ const Names = ({ history }: NamesProps) => {
   }, [])
 
   const checkGroup = async () => {
+    setLoading(true)
     try {
       if (!code) {
         const group = await AnswerService.createNewGroup()
@@ -69,10 +71,12 @@ const Names = ({ history }: NamesProps) => {
         const data = await NamesService.getNameCount({ code, isSender: 1 })
         setCount(data)
       }
+      await getName(type)
     } catch (e) {
       ErrorUtils.displayError(e.data)
+    } finally {
+      setLoading(false)
     }
-    getName(type)
   }
 
   const getName = async (nameType: string) => {
@@ -85,7 +89,7 @@ const Names = ({ history }: NamesProps) => {
   }
 
   const handleSelect = async (isApproved: boolean) => {
-    setLoading(true)
+    setSaving(true)
     try {
       await AnswerService.newAnswer({
         code,
@@ -103,7 +107,7 @@ const Names = ({ history }: NamesProps) => {
     } catch (e) {
       ErrorUtils.displayError(e)
     } finally {
-      setLoading(false)
+      setSaving(false)
     }
   }
 
@@ -117,7 +121,7 @@ const Names = ({ history }: NamesProps) => {
     getName(type)
   }
 
-  return (
+  return loading ? null : (
     <div className='names-page'>
       <ButtonGroup className='type-buttons'>
         {nameTypes.map(({ label, value }) => (
@@ -142,7 +146,7 @@ const Names = ({ history }: NamesProps) => {
           <NameCard
             name={name}
             onSelect={(isApproved: boolean) => handleSelect(isApproved)}
-            disabled={loading}
+            disabled={saving}
             continueButton={count.liked ? code : undefined}
           />
         </Col>
