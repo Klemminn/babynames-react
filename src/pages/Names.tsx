@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { ButtonGroup, Button, Card, Col, Row, NameCard } from 'components'
+import { ButtonGroup, Button, Card, Col, Input, Row, NameCard } from 'components'
 import { AnswerService, NamesService } from 'services'
 import { ErrorUtils } from 'utils'
 import type { Name, Count } from 'types'
@@ -119,6 +119,10 @@ const Names = ({ history }: NamesProps) => {
           </Button>
         ))}
       </ButtonGroup>
+      <Input
+        placeholder='Nafn byrjar á...'
+        className='mb-3'
+      />
       <Row>
         <Col md={6}>
           <NameCard
