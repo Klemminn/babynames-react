@@ -70,7 +70,7 @@ const Answer = ({ history }: AnswerProps) => {
         <Col md={6} className='d-none d-md-block'>
           <Card className='main-card'>
             <div className='status'>
-              Eftir að svara: {names.length}
+              Ósvöruð: {names.length}
             </div>
           </Card>
         </Col>

@@ -125,7 +125,7 @@ const Names = ({ history }: NamesProps) => {
             name={name}
             onSelect={(isApproved: boolean) => handleSelect(isApproved)}
             disabled={loading}
-            continueButton={code}
+            continueButton={count.liked ? code : undefined}
           />
         </Col>
         <Col md={6} className='d-none d-md-block'>

@@ -18,18 +18,19 @@ const NameCard = ({ name, onSelect, continueButton, unanswered, ...rest }: NameC
     title={name.name}
   >
     {continueButton && (
-      <IconButton
-        className='continue-button d-md-none'
-        color='primary'
-        link={`/send/${continueButton}`}
-        icon={<FaCheck />}
-      >
-        Ljúka vali
-      </IconButton>
+      <div className='continue-button d-md-none'>
+        <IconButton
+          color='primary'
+          link={`/send/${continueButton}`}
+          icon={<FaCheck />}
+        >
+          Ljúka vali
+        </IconButton>
+      </div>
     )}
     {!!unanswered && (
       <div className='unanswered d-md-none'>
-        Ósvarað: {unanswered}
+        Ósvörað: {unanswered}
       </div>
     )}
     <p>
