@@ -15,7 +15,7 @@ type NameCardProps = {
 const NameCard = ({ name, onSelect, continueButton, unanswered, ...rest }: NameCardProps) => (
   <Card
     className='name-card main-card'
-    title={name.name ? name.name : 'Ekkert nafn uppfyllir valin skilyrði'}
+    title={name.name || 'Ekkert nafn uppfyllir valin skilyrði'}
   >
     {continueButton && (
       <div className='continue-button d-md-none'>
