@@ -41,9 +41,16 @@ const defaultCount: Count = {
   hasEmail: false
 }
 
+const defaultName: Name = {
+  name: '',
+  firstNamed: 0,
+  secondNamed: 0
+}
+
+let startsWith = ''
 const Names = ({ history }: NamesProps) => {
   const [type, setType]: [string, Function] = useState('random')
-  const [name, setName]: [Name, Function] = useState({})
+  const [name, setName]: [Name, Function] = useState(defaultName)
   const [count, setCount]: [Count, Function] = useState(defaultCount)
   const [loading, setLoading]: [boolean, Function] = useState(false)
   const { isMale, code }: { isMale: string, code: string} = useParams()
@@ -70,8 +77,8 @@ const Names = ({ history }: NamesProps) => {
 
   const getName = async (nameType: string) => {
     try {
-      const response = await NamesService.getNames({ isMale, code, type: nameType })
-      setName(response[0])
+      const response = await NamesService.getNames({ isMale, code, type: nameType, startsWith })
+      setName(response[0] || defaultName)
     } catch (e) {
       ErrorUtils.displayError(e.data)
     }
@@ -105,6 +112,11 @@ const Names = ({ history }: NamesProps) => {
     getName(nameType)
   }
 
+  const handleStartsWithChange = (newStartsWith: string) => {
+    startsWith = newStartsWith
+    getName(type)
+  }
+
   return (
     <div className='names-page'>
       <ButtonGroup className='type-buttons'>
@@ -122,6 +134,8 @@ const Names = ({ history }: NamesProps) => {
       <Input
         placeholder='Nafn byrjar á...'
         className='mb-4'
+        onChangeDelay={800}
+        onChange={(value: string) => handleStartsWithChange(value)}
       />
       <Row>
         <Col md={6}>

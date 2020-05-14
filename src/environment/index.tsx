@@ -10,8 +10,8 @@ const staging: EnvParams = {
 }
 
 const local: EnvParams = {
-  // api: 'http://127.0.0.1:8000/v1'
-  api: 'https://api.nafnaleit.com/v1'
+  api: 'http://127.0.0.1:8000/v1'
+  // api: 'https://api.nafnaleit.com/v1'
 }
 
 let envParams: EnvParams

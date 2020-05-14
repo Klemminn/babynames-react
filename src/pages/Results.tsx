@@ -66,11 +66,8 @@ const Results = () => {
     <div className='results-page'>
       <h1>Húrra! Þið eruð búin að klára að fara í gegnum nöfnin!</h1>
       <Row>
-        <Col md={4}>
-          <Card
-            className='main-card'
-            title={results.bothLiked.length ? 'Nöfn sem báðir aðilar völdu' : 'Því miður var ekkert nafn sem báðir aðilar völdu :('}
-          >
+        <Col md={4} className='d-flex align-items-stretch'>
+          <Card title={results.bothLiked.length ? 'Nöfn sem báðir aðilar völdu' : 'Því miður var ekkert nafn sem báðir aðilar völdu :('}>
             {results.bothLiked.map((name) => (
               <div
                 key={name}
@@ -81,11 +78,8 @@ const Results = () => {
             ))}
           </Card>
         </Col>
-        <Col md={4}>
-          <Card
-            className='main-card'
-            title='Nöfn sem fyrri aðili valdi'
-          >
+        <Col md={4} className='d-flex align-items-stretch'>
+          <Card title='Nöfn sem fyrri aðili valdi'>
             {results.senderLiked.map((name) => (
               <div
                 key={name}
@@ -96,11 +90,8 @@ const Results = () => {
             ))}
           </Card>
         </Col>
-        <Col md={4}>
-          <Card
-            className='main-card'
-            title='Nöfn sem seinni aðili valdi'
-          >
+        <Col md={4} className='d-flex align-items-stretch'>
+          <Card title='Nöfn sem seinni aðili valdi'>
             {results.receiverLiked.map((name) => (
               <div
                 key={name}

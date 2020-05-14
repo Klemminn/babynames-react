@@ -15,7 +15,7 @@ type NameCardProps = {
 const NameCard = ({ name, onSelect, continueButton, unanswered, ...rest }: NameCardProps) => (
   <Card
     className='name-card main-card'
-    title={name.name}
+    title={name.name ? name.name : 'Ekkert nafn uppfyllir valin skilyrði'}
   >
     {continueButton && (
       <div className='continue-button d-md-none'>
@@ -33,15 +33,19 @@ const NameCard = ({ name, onSelect, continueButton, unanswered, ...rest }: NameC
         Ósvörað: {unanswered}
       </div>
     )}
-    <p>
-      {name.firstNamed} bera {name.name} sem fyrsta nafn.
-      <br />
-      {name.secondNamed} bera {name.name} sem annað nafn.
-    </p>
-    <VoteButtons
-      onSelect={onSelect}
-      {...rest}
-    />
+    {!!name.name && (
+      <>
+        <p>
+          {name.firstNamed} bera {name.name} sem fyrsta nafn.
+          <br />
+          {name.secondNamed} bera {name.name} sem annað nafn.
+        </p>
+        <VoteButtons
+          onSelect={onSelect}
+          {...rest}
+        />
+      </>
+    )}
   </Card>
 )
 

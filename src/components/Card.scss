@@ -1,12 +1,14 @@
 .card-component {
+  width: 100%;
+
+  .card-title, .status {
+    font-size: 1.25em;
+    font-weight: 600;
+  }
+
   &.main-card {
     min-height: 16em;
     margin-bottom: 1em;
-
-    .card-title, .status {
-      font-size: 1.25em;
-      font-weight: 600;
-    }
     
     .card-body {
       display: flex;

@@ -4,7 +4,8 @@ class NamesService {
   static async getNames (params: {
     type: string,
     code: string,
-    isMale: string
+    isMale: string,
+    startsWith?: string
   }) {
     const { data } = await connector.get('/names/', { params })
     return data
