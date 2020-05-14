@@ -19,12 +19,12 @@ const App = () => (
     <div className='container route-container'>
       <Router>
         <Switch>
-          <Route exact path='/home' component={Home} />
+          <Route exact path='/' component={Home} />
           <Route exact path={['/names/:isMale', '/names/:isMale/:code']} component={Names} />
           <Route exact path='/send/:code' component={Send} />
           <Route exact path='/answer/:code' component={Answer} />
           <Route exact path='/results/:code' component={Results} />
-          <Redirect to='/home' />
+          <Redirect to='/' />
         </Switch>
       </Router>
     </div>
