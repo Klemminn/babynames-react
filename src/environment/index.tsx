@@ -12,6 +12,10 @@ const local: EnvParams = {
 
 const env = process.env.REACT_APP_ENV
 
-const envParams: EnvParams = env === 'production' ? production : local
+const envParams: EnvParams = (
+  env === 'production'
+  ? production
+  : local
+)
 
 export default envParams
