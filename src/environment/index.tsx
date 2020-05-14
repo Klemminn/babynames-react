@@ -3,14 +3,13 @@ type envParams = {
 }
 
 const production: envParams = {
-  api: 'http://api.nafnaleit.com/v1'
+  api: 'https://api.nafnaleit.com/v1'
 }
 const staging: envParams = {
   api: 'https://stagingapi.nafnaleit.com/v1'
 }
 
 const local: envParams = {
-  // api: 'http://api.nafnaleit.com/v1'
   api: 'http://127.0.0.1:8000/v1'
 }
 
