@@ -121,7 +121,7 @@ const Names = ({ history }: NamesProps) => {
       </ButtonGroup>
       <Input
         placeholder='Nafn byrjar á...'
-        className='mb-3'
+        className='mb-4'
       />
       <Row>
         <Col md={6}>
