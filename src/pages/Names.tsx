@@ -58,6 +58,7 @@ const Names = ({ history }: NamesProps) => {
 
   useEffect(() => {
     checkGroup()
+    startsWith = ''
     // eslint-disable-next-line
   }, [])
 
